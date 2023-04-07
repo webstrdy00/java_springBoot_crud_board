@@ -1,6 +1,5 @@
 package com.example.demo.entity;
 
-import com.example.demo.dto.BoardRequestDto;
 import lombok.*;
 
 import javax.persistence.*;
@@ -11,7 +10,7 @@ import javax.persistence.*;
 @Getter
 @RequiredArgsConstructor
 @AllArgsConstructor
-public class Board {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,9 +25,7 @@ public class Board {
     @Column()
     private String content;
 
-    public void update(BoardRequestDto boardRequestDto){
-        this.title = boardRequestDto.getTitle();
-        this.nickname = boardRequestDto.getNickname();
-        this.content = boardRequestDto.getContent();
-    }
+    @Column()
+    private String introduce;
+
 }
